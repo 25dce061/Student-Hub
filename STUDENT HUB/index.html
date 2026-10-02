@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Hub</title>
+
+    <style>
+
+        body {
+            background-color: white;
+            background-image: url("building.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            text-align: center;
+            color: black;
+        }
+
+        h1 {
+            background-color: #315b7d;
+            color: black;
+            padding: 20px;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #315b7d;
+            padding: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 15px;
+            font-size: 25px;
+        }
+
+        nav a:hover {
+            color: #d6eaf8;
+            text-decoration: underline;
+        }
+
+        .content {
+            padding: 20px;
+            min-height: 350px;
+            position: relative;
+        }
+
+        .weather-button {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .weather-button button {
+            background-color: #1f8a70;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .weather-button button:hover {
+            background-color: #146b57;
+        }
+
+        .theme-button {
+            position: absolute;
+            left: 30px;
+            top: 20px;
+        }
+
+        .theme-button button {
+            background-color: #315b7d;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #315b7d;
+            color: white;
+            padding: 15px;
+            margin-top: 50px;
+        }
+
+
+        /* DARK MODE */
+body.dark {
+    background-color: #dce6f1;
+    background-image: none;
+    color: #1f2937;
+}
+
+body.dark h1 {
+    background-color: #6b8eae;
+    color: white;
+}
+
+body.dark nav {
+    background-color: #6b8eae;
+}
+
+body.dark footer {
+    background-color: #6b8eae;
+}
+
+body.dark .theme-button button {
+    background-color: #315b7d;
+    color: white;
+}
+
+    </style>
+</head>
+
+
+<body>
+
+    <iframe src="pages/header.html" width="100%" height="150" frameborder="0"> </iframe>
+
+
+    <nav>
+        <a href="pages/register.html">Register</a>
+        <a href="pages/event.html">Event</a>
+        <a href="pages/contact.html">Contact</a>
+    </nav>
+
+
+    <div class="content">
+
+        <div class="theme-button">
+            <button onclick="changeTheme()" id="themeBtn">🌙 Dark Mode </button>
+        </div>
+
+
+        <div class="weather-button">
+
+            <a href="pages/weather.html">
+                <button>☀ Weather Forecast</button>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <footer>
+        &copy; 2026 STUDENT HUB
+    </footer>
+
+
+    <script>
+
+        function changeTheme() {
+
+            document.body.classList.toggle("dark");
+
+            let button = document.getElementById("themeBtn");
+
+            if (document.body.classList.contains("dark")) {
+                button.innerHTML = "☀ Light Mode";
+            } else {
+                button.innerHTML = "🌙 Dark Mode";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

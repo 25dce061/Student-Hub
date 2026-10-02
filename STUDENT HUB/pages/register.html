@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub Registration</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <iframe src="header.html"
+        style="width: 100%; height: 150px; border: none;">
+    </iframe>
+
+    <h1 style="background-color: #315b7d; color: white;">
+        STUDENT REGISTRATION
+    </h1>
+
+    <form onsubmit="return register()" method="post">
+
+        <label>Full Name:</label>
+
+        <input type="text"
+               id="name"
+               placeholder="Enter your name">
+
+        <br><br>
+
+
+        <label>Username:</label>
+
+        <input type="text"
+               id="username"
+               placeholder="Enter username">
+
+        <br><br>
+
+
+        <label>Email:</label>
+
+        <input type="text"
+               id="email"
+               placeholder="Enter email">
+
+        <br><br>
+
+
+        <label>Password:</label>
+
+        <input type="password"
+               id="password"
+               placeholder="Enter password">
+
+        <br><br>
+
+
+        <label>Confirm Password:</label>
+
+        <input type="password"
+               id="confirmPassword"
+               placeholder="Confirm password">
+
+        <br><br>
+
+        <a href="../index.html">
+        <button type="submit">
+  Register
+        </button>
+    </a>
+
+        <br><br>
+
+
+        <a href="login.html">Already have an account? Login </a>
+
+    </form>
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
