@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Cognizance 2026",
+        "description": "Technical festival of CHARUSAT.",
+        "date": "2026-09-25",
+        "venue": "CHARUSAT Campus",
+        "department": "Computer Department",
+        "category": "Technical"
+    },
+    {
+        "title": "Spoural 2026",
+        "description": "Annual sports event of CHARUSAT.",
+        "date": "2026-10-12",
+        "venue": "University Ground",
+        "department": "Sports Department",
+        "category": "Sports"
+    },
+    {
+        "title": "TechConclave",
+        "description": "Technology and innovation event.",
+        "date": "2026-11-05",
+        "venue": "Main Auditorium",
+        "department": "Computer Department",
+        "category": "Technical"
+    }
+]

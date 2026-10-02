@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Results - Student Hub</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+
+    <!-- Header Frame -->
+    <iframe src="header.html" class="header-frame" title="Student Hub Header"></iframe>
+
+    <!-- Top Action Bar (Aligned identically on all pages) -->
+    <div class="top-action-bar">
+        <a href="../index.html" class="home-nav-btn">🏠 Home</a>
+        <button id="theme-toggle" class="theme-btn-compact" type="button" aria-label="Switch to dark theme">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Navigation Bar (Aligned identically on all pages, bold font) -->
+    <nav id="main-nav" aria-label="Main navigation">
+        <button id="menu-toggle" class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+        <div id="nav-links">
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="attendance.html">ATTENDANCE</a>
+            <a href="result.html" class="active">RESULTS</a>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h1 class="page-title">SEMESTER EXAMINATION RESULTS</h1>
+
+    <!-- Enlarged, Visible & Adjustable Table (No zooming required) -->
+    <main class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 35%;">SUBJECT NAME</th>
+                    <th style="width: 20%;">MARKS (OUT OF 100)</th>
+                    <th style="width: 20%;">LETTER GRADE</th>
+                    <th style="width: 25%;">ACADEMIC STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Applied Mathematics III</strong></td>
+                    <td>78 / 100</td>
+                    <td><span class="badge-info">B+</span></td>
+                    <td><span class="badge-info">VERY GOOD</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Engineering Physics &amp; Mechanics</strong></td>
+                    <td>95 / 100</td>
+                    <td><span class="badge-success">A+</span></td>
+                    <td><span class="badge-success">OUTSTANDING</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Web Technology &amp; Frameworks</strong></td>
+                    <td>90 / 100</td>
+                    <td><span class="badge-success">A</span></td>
+                    <td><span class="badge-success">EXCELLENT</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Object-Oriented Programming (Java)</strong></td>
+                    <td>70 / 100</td>
+                    <td><span class="badge-info">B</span></td>
+                    <td><span class="badge-info">GOOD</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Data Structures &amp; Algorithms</strong></td>
+                    <td>88 / 100</td>
+                    <td><span class="badge-success">A</span></td>
+                    <td><span class="badge-success">EXCELLENT</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Computer Organization &amp; Architecture</strong></td>
+                    <td>82 / 100</td>
+                    <td><span class="badge-info">B+</span></td>
+                    <td><span class="badge-info">VERY GOOD</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Portal Footer -->
+    <footer>
+        &copy; 2026 STUDENT HUB &bull; CHARUSAT University &bull; All Rights Reserved.
+    </footer>
+
+</body>
+</html>
