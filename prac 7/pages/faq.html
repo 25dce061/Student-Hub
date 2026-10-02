@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Student Hub</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+
+    <!-- Header Frame -->
+    <iframe src="header.html" class="header-frame" title="Student Hub Header"></iframe>
+
+    <!-- Top Action Bar (Aligned identically on all pages) -->
+    <div class="top-action-bar">
+        <a href="../index.html" class="home-nav-btn">🏠 Home</a>
+        <button id="theme-toggle" class="theme-btn-compact" type="button" aria-label="Switch to dark theme">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Navigation Bar (Aligned identically on all pages, bold font) -->
+    <nav id="main-nav" aria-label="Main navigation">
+        <button id="menu-toggle" class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+        <div id="nav-links">
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html" class="active">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="register.html">REGISTER</a>
+            <a href="login.html">LOGIN</a>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h1 class="page-title">FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
+
+    <main class="faq-container">
+
+        <p class="faq-intro">
+            Find answers to common questions about the Student Hub Portal, academic courses, exams, fees, and campus events.
+        </p>
+
+       
+
+     
+        <div id="faq-container-list">
+
+            <div class="faq-item" data-category="General">
+                <details>
+                    <summary>
+                        <span class="faq-category">General</span><br>
+                        What is Student Hub?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Student Hub is an integrated university portal designed for CHARUSAT students, providing instantaneous access to academic schedules, real-time attendance tracking, exam results, fee payments, student profiles, and campus events.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Login & Security">
+                <details>
+                    <summary>
+                        <span class="faq-category">Login & Security</span><br>
+                        How can I login to Student Hub?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Navigate to the Login page from the main navigation menu and enter your registered student username (e.g., <code>yesha</code>) and password. For default testing accounts, use password <code>1234</code>.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Login & Security">
+                <details>
+                    <summary>
+                        <span class="faq-category">Login & Security</span><br>
+                        How do I reset my password if forgotten?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Click on the "Forgot Password?" link on the Login page or go to Settings &gt; Change Password to securely update your portal credentials.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Account & Profile">
+                <details>
+                    <summary>
+                        <span class="faq-category">Account & Profile</span><br>
+                        How can I register as a new student?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Click on the <strong>Register</strong> option in the navigation menu and fill out your full name, student username, registered university email, and a secure password.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Attendance">
+                <details>
+                    <summary>
+                        <span class="faq-category">Attendance</span><br>
+                        Where can I check my attendance percentage?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Open the <strong>Attendance</strong> section from your Student Dashboard. You can review course-by-course attendance status, lecture/lab breakdown, and compliance alerts.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Examinations">
+                <details>
+                    <summary>
+                        <span class="faq-category">Examinations</span><br>
+                        Where can I view my examination results and grades?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Select the <strong>Result</strong> card on your Student Dashboard to view semester marks, grade point averages, subject credits, and examination qualification status.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Fees & Payments">
+                <details>
+                    <summary>
+                        <span class="faq-category">Fees & Payments</span><br>
+                        Where can I check my semester fee details?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Open the <strong>Fees</strong> section to view total tuition fees, scholarship deductions, received amounts, and outstanding balances.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Events">
+                <details>
+                    <summary>
+                        <span class="faq-category">Events</span><br>
+                        Where can I find and register for university events?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Visit the <strong>Events</strong> page to browse technical hackathons, cultural festivals, workshops, sports tournaments, and conferences. You can filter by category, sort by date, and click "View Details" to open the interactive event popup modal!
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Account & Profile">
+                <details>
+                    <summary>
+                        <span class="faq-category">Account & Profile</span><br>
+                        How can I preview or update my Student ID profile?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            Visit the <strong>Profile</strong> page to edit contact information, view your enrolled department, and click "Preview ID Card" to generate an instant verified digital student identity card.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="faq-item" data-category="Support">
+                <details>
+                    <summary>
+                        <span class="faq-category">Support</span><br>
+                        How can I contact the Student Hub Helpdesk?
+                    </summary>
+                    <div class="faq-answer">
+                        <p>
+                            You can visit our <strong>Contact</strong> page for university helpline numbers (+91 985641237), official email (studenthub@gmail.com), or submit an online query using the help button below.
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+
+        <!-- Ask a Question Card -->
+        <div class="ask-box">
+            <h2>Still Have a Question?</h2>
+            <p>
+                If you cannot find the answer to your question, reach out directly to the Student Hub Helpdesk.
+            </p>
+            <button type="button" id="open-ask-modal" class="event-btn" style="margin-top: 10px;">
+                ✉️ Ask Helpdesk a Question
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Ask Question Modal Dialog -->
+    <dialog id="ask-modal" class="event-modal" aria-labelledby="ask-modal-title">
+        <div class="modal-content">
+            <button id="close-ask-modal" type="button" class="modal-close-btn" aria-label="Close question dialog">&times;</button>
+            <h2 id="ask-modal-title" style="margin-top: 0; color: #294d68;">Submit a Question to Helpdesk</h2>
+            <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">
+                Our student support team typically responds within 24 business hours.
+            </p>
+
+            <form id="ask-form">
+                <div style="margin-bottom: 14px;">
+                    <label for="ask-name" style="display: block; font-weight: bold; margin-bottom: 6px;">Your Name:</label>
+                    <input type="text" id="ask-name" style="width: 100%;" required placeholder="Enter your full name">
+                </div>
+
+                <div style="margin-bottom: 14px;">
+                    <label for="ask-email" style="display: block; font-weight: bold; margin-bottom: 6px;">Email Address:</label>
+                    <input type="email" id="ask-email" style="width: 100%;" required placeholder="student@gmail.com">
+                </div>
+
+                <div style="margin-bottom: 18px;">
+                    <label for="ask-question" style="display: block; font-weight: bold; margin-bottom: 6px;">Your Question:</label>
+                    <textarea id="ask-question" rows="4" style="width: 100%; resize: vertical;" required placeholder="Type your question or query here..."></textarea>
+                </div>
+
+                <button type="submit" class="event-btn" style="width: 100%; justify-content: center;">
+                    Submit Question
+                </button>
+
+                <p id="ask-success" class="badge-success" style="display: none; width: 100%; text-align: center; margin-top: 15px; padding: 10px;"></p>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Portal Footer -->
+    <footer>
+        &copy; 2026 STUDENT HUB &bull; CHARUSAT University &bull; All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

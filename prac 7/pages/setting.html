@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Account Settings - Student Hub</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+    <!-- Header Frame -->
+    <iframe src="header.html"
+            class="header-frame"
+            title="Student Hub Header"></iframe>
+
+
+    <!-- Top Action Bar -->
+    <div class="top-action-bar">
+
+        <a href="../index.html" class="home-nav-btn">
+            🏠 Home
+        </a>
+
+        <button id="theme-toggle"
+                class="theme-btn-compact"
+                type="button"
+                aria-label="Switch to dark theme">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+
+    <!-- Navigation Bar -->
+    <nav id="main-nav" aria-label="Main navigation">
+
+        <button id="menu-toggle"
+                class="mobile-menu-btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            ☰ Menu
+        </button>
+
+        <div id="nav-links">
+
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="KYAAPPLICATION.html">KYA FORM</a>
+            <a href="setting.html" class="active">SETTING</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Page Title -->
+    <h1 class="page-title">
+        STUDENT ACCOUNT SETTINGS
+    </h1>
+
+
+    <!-- Settings Section -->
+    <main style="
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+        box-sizing:border-box;
+    ">
+
+        <!-- Box Around Password Change -->
+        <div style="
+            width:500px;
+            background:white;
+            padding:35px;
+            border-radius:10px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.12);
+            box-sizing:border-box;
+        ">
+
+            <div style="
+                width:100%;
+                display:flex;
+                justify-content:center;
+            ">
+
+                <a href="changepassword.html"
+                   style="
+                    width:100%;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    padding:15px;
+                    font-size:16px;
+                    font-weight:bold;
+                    text-decoration:none;
+                    color:white;
+                    background-color:#315b7d;
+                    border-radius:5px;
+                    box-sizing:border-box;
+                ">
+                    🔐 Change Portal Password
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 STUDENT HUB &bull;
+        CHARUSAT University &bull;
+        All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>
