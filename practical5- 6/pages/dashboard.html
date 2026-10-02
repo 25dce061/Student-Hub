@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Hub</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body class="dashboard-body">
+
+    
+    <iframe src="header.html" class="header-frame" title="Student Hub Header"></iframe>
+
+    <div class="top-action-bar">
+        <a href="../index.html" class="home-nav-btn">🏠 Home</a>
+        <button id="theme-toggle" class="theme-btn-compact" type="button" aria-label="Switch to dark theme">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Navigation Bar (Aligned identically on all pages, bold font) -->
+    <nav id="main-nav" aria-label="Main navigation">
+        <button id="menu-toggle" class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+        <div id="nav-links">
+            <a href="dashboard.html" class="active">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="KYAAPPLICATION.html">KYA FORM</a>
+            <a href="setting.html">SETTING</a>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h1 class="page-title">STUDENT DASHBOARD</h1>
+
+    <!-- Welcome Greeting & Date -->
+
+    <!-- Upcoming Campus Notice Bar -->
+    <div class="quick-reminder-bar">
+        <span>
+            📢 <strong>Upcoming:</strong>
+            Cognizance 2026 Tech Fest starts September 25. Check Events for registrations!
+        </span>
+        <a href="event.html">
+            <button class="reminder-btn" type="button">View Events</button>
+        </a>
+    </div>
+
+    <!-- Logout Action -->
+    <div class="logout">
+    <button id="open-logout-modal" type="button">LOGOUT</button>
+</div>
+
+    <!-- Main Academic Cards Grid -->
+    <main class="container">
+        <a href="attendance.html">
+            <button class="box" type="button">
+                <span>📊 ATTENDANCE</span>
+                <small style="font-size: 13px; font-weight: normal; opacity: 0.85;">View real-time course percentages</small>
+            </button>
+        </a>
+
+        <a href="result.html">
+            <button class="box" type="button">
+                <span>🏆 RESULT</span>
+                <small style="font-size: 13px; font-weight: normal; opacity: 0.85;">View exam grades &amp; marks</small>
+            </button>
+        </a>
+
+        <a href="fees.html">
+            <button class="box" type="button">
+                <span>💳 FEES</span>
+                <small style="font-size: 13px; font-weight: normal; opacity: 0.85;">View tuition fee records</small>
+            </button>
+        </a>
+
+        <a href="timetable.html">
+            <button class="box" type="button">
+                <span>📅 TIME TABLE</span>
+                <small style="font-size: 13px; font-weight: normal; opacity: 0.85;">View weekly lecture schedule</small>
+            </button>
+        </a>
+    </main>
+
+    <!-- Logout Confirmation Modal Dialog -->
+    <dialog id="logout-modal" class="event-modal">
+        <div class="modal-content">
+            <button id="cancel-logout-x" type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <h2 style="margin-top: 0; color: #294d68;">Confirm Logout</h2>
+            <p style="color: #475569; line-height: 1.6; margin-bottom: 24px;">
+                Are you sure you want to end your active session and log out of the Student Hub portal?
+            </p>
+            <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                <button id="cancel-logout" type="button" style="background-color: #64748b;">Cancel</button>
+                <a href="login.html" class="event-btn" style="background-color: #b91c1c;">Yes, Logout</a>
+            </div>
+        </div>
+    </dialog>
+
+    
+    <footer>
+        &copy; 2026 STUDENT HUB &bull; CHARUSAT University &bull; All Rights Reserved.
+    </footer>
+
+
+    <script src="../js/dashboard.js" defer></script>
+</body>
+</html>

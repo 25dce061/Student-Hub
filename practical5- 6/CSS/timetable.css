@@ -1,0 +1,47 @@
+@import url("style.css");
+
+/* Timetable specific additions complementing style.css */
+.status-present {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #dcfce7;
+    color: #166534;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.status-absent {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.status-pending {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #f1f5f9;
+    color: #64748b;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+body.dark .status-present {
+    background-color: #064e3b;
+    color: #6ee7b7;
+}
+
+body.dark .status-absent {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+body.dark .status-pending {
+    background-color: #334155;
+    color: #cbd5e1;
+}

@@ -1,0 +1,10 @@
+[
+  {"id":1,"name":"Aarav Patel","program":"Computer Engineering","year":"Year 2","interests":["Web development","AI"],"bio":"Builds accessible campus tools and enjoys hackathons."},
+  {"id":2,"name":"Diya Shah","program":"Information Technology","year":"Year 3","interests":["Design","Robotics"],"bio":"Combines thoughtful interface design with practical engineering."},
+  {"id":3,"name":"Kabir Mehta","program":"Computer Engineering","year":"Year 1","interests":["Cybersecurity","Gaming"],"bio":"Learning secure software development and game programming."},
+  {"id":4,"name":"Anaya Desai","program":"Data Science","year":"Year 2","interests":["Machine learning","Music"],"bio":"Explores data projects and performs with the campus music club."},
+  {"id":5,"name":"Reyansh Joshi","program":"Information Technology","year":"Year 4","interests":["Cloud computing","Volunteering"],"bio":"Mentors students and builds cloud native applications."},
+  {"id":6,"name":"Myra Trivedi","program":"Data Science","year":"Year 3","interests":["Analytics","Photography"],"bio":"Turns real world questions into clear data stories."},
+  {"id":7,"name":"Vivaan Rao","program":"Computer Engineering","year":"Year 4","interests":["Open source","Robotics"],"bio":"Contributes to open source and leads the robotics team."},
+  {"id":8,"name":"Sara Khan","program":"Information Technology","year":"Year 1","interests":["Mobile apps","Reading"],"bio":"Learning app development and helping run the reading circle."}
+]

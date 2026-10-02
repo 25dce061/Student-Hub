@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>University Events - Student Hub</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+
+<body class="event-body">
+
+    <!-- Header -->
+    <iframe src="header.html" class="header-frame"
+            title="Student Hub Header"></iframe>
+
+
+    <!-- Home and Dark Mode -->
+    <div class="top-action-bar">
+
+        <a href="../index.html" class="home-nav-btn">
+            🏠 Home
+        </a>
+
+        <button id="theme-toggle"
+                class="theme-btn-compact"
+                type="button">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+
+        <button id="menu-toggle"
+                class="mobile-menu-btn"
+                type="button">
+            ☰ Menu
+        </button>
+
+        <div id="nav-links">
+
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html" class="active">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="register.html">REGISTER</a>
+            <a href="login.html">LOGIN</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Page Title -->
+    <h1 class="page-title">
+        CAMPUS &amp; UNIVERSITY EVENTS
+    </h1>
+
+
+    <!-- Search and Filter -->
+    <section class="event-controls">
+
+        <input type="search"
+               id="event-search"
+               placeholder="🔍 Search events...">
+
+        <select id="event-filter">
+
+            <option value="all">
+                All Event Types
+            </option>
+
+            <option value="Technical">
+                Technical
+            </option>
+
+            <option value="Sports">
+                Sports
+            </option>
+
+            <option value="Cultural">
+                Cultural
+            </option>
+
+        </select>
+
+    </section>
+
+
+    <!-- Event Status -->
+    <p id="event-count"
+       class="event-status-text">
+        Loading events...
+    </p>
+
+
+    <!-- Events -->
+    <main id="events-container"
+          class="events-list">
+
+    </main>
+
+
+    <!-- Pagination -->
+    <div class="pagination-container">
+
+        <button id="events-prev"
+                class="pagination-btn"
+                disabled>
+            &laquo; Previous
+        </button>
+
+        <span id="events-page-indicator"
+              class="page-badge">
+            Page 1
+        </span>
+
+        <button id="events-next"
+                class="pagination-btn"
+                disabled>
+            Next &raquo;
+        </button>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 STUDENT HUB &bull;
+        CHARUSAT University &bull;
+        All Rights Reserved.
+    </footer>
+
+
+    <!-- Main JavaScript -->
+    <script src="../js/script.js" defer></script>
+
+</body>
+</html>
