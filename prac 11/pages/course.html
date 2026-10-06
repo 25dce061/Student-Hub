@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Student Hub</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+
+    <!-- Header Frame -->
+    <iframe src="header.html" class="header-frame" title="Student Hub Header"></iframe>
+
+    <!-- Top Action Bar (Identically aligned across all pages) -->
+    <div class="top-action-bar">
+        <a href="../index.html" class="home-nav-btn">🏠 Home</a>
+        <button id="theme-toggle" class="theme-btn-compact" type="button" aria-label="Switch to dark theme">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Navigation Bar (Identically aligned, bold font) -->
+    <nav id="main-nav" aria-label="Main navigation">
+        <button id="menu-toggle" class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+        <div id="nav-links">
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html" class="active">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="register.html">REGISTER</a>
+            <a href="login.html">LOGIN</a>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h1 class="page-title">COURSE CATALOG &amp; REGISTRATION</h1>
+
+    <!-- Course Search & Filter: Sized According to Table -->
+    
+
+    <!-- Enlarged & Adjustable Course Table (No zooming required) -->
+    <main class="table-responsive">
+        <table id="course-table-elem">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">SR. NO</th>
+                    <th style="width: 32%;">COURSE NAME</th>
+                    <th style="width: 18%;">COURSE CODE</th>
+                    <th style="width: 15%;">CREDITS</th>
+                    <th style="width: 25%;">FACULTY IN-CHARGE</th>
+                </tr>
+            </thead>
+            <tbody id="courseTable">
+                <tr>
+                    <td>1</td>
+                    <td><strong>Python Programming &amp; Scripting</strong></td>
+                    <td><span class="badge-info">CS101</span></td>
+                    <td>4 Credits</td>
+                    <td>Prof. Radhika Patel</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Java Object-Oriented Programming</strong></td>
+                    <td><span class="badge-info">CS102</span></td>
+                    <td>4 Credits</td>
+                    <td>Prof. Nishant Joshi</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>C++ Systems &amp; Low-Level Programming</strong></td>
+                    <td><span class="badge-info">CS103</span></td>
+                    <td>3 Credits</td>
+                    <td>Prof. Ritesh Dave</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>JavaScript &amp; Modern Web Development</strong></td>
+                    <td><span class="badge-info">CS104</span></td>
+                    <td>4 Credits</td>
+                    <td>Prof. Urvashi Shah</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><strong>Data Structures &amp; Algorithms (DSA)</strong></td>
+                    <td><span class="badge-info">CS105</span></td>
+                    <td>4 Credits</td>
+                    <td>Prof. Amit Trivedi</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><strong>Database Management Systems (DBMS)</strong></td>
+                    <td><span class="badge-info">CS106</span></td>
+                    <td>3 Credits</td>
+                    <td>Prof. Meera Sharma</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><strong>Operating Systems &amp; Concurrency</strong></td>
+                    <td><span class="badge-info">CS107</span></td>
+                    <td>4 Credits</td>
+                    <td>Prof. Harshil Mehta</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><strong>Computer Networks &amp; Security Protocols</strong></td>
+                    <td><span class="badge-info">CS108</span></td>
+                    <td>3 Credits</td>
+                    <td>Prof. Neha Varma</td>
+                </tr>
+                <!-- Dynamic Empty State Row -->
+                <tr id="no-courses-row" style="display: none;">
+                    <td colspan="5" style="padding: 30px; color: #64748b; font-weight: bold;">
+                        No matching courses found. Try modifying your search query or dropdown filter.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Portal Footer -->
+    <footer>
+        &copy; 2026 STUDENT HUB &bull; CHARUSAT University &bull; All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

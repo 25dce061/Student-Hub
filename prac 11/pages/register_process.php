@@ -1,0 +1,258 @@
+<?php
+// ==============================================================================
+// StudentHub - Student Registration Processing (pages/register_process.php)
+// Simple, secure backend registration script using PHP + MySQLi
+// ==============================================================================
+
+// Step 1: Reuse the existing database connection
+require_once __DIR__ . "/../config/db.php";
+
+// Initialize status tracking
+$errors = [];
+$isSuccess = false;
+
+// Step 2: Ensure form was submitted using HTTP POST method
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    // Step 3: Receive and sanitize form inputs
+    // trim() strips unnecessary leading/trailing whitespace
+    $name             = trim($_POST['name'] ?? $_POST['fullname'] ?? '');
+    $username         = trim($_POST['username'] ?? '');
+    $email            = trim($_POST['email'] ?? '');
+    $password         = $_POST['password'] ?? '';
+    $confirm_password = $_POST['confirm_password'] ?? '';
+
+    // ==========================================================================
+    // Step 4: Backend Validation (Never trust frontend validation alone)
+    // ==========================================================================
+
+    // Check for empty fields
+    if (empty($name) || empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
+        $errors[] = "All fields are required. Please fill in all fields.";
+    } else {
+
+        // Validate Full Name: letters and spaces only, 3 to 30 characters
+        if (!preg_match("/^[A-Za-z ]{3,30}$/", $name)) {
+            $errors[] = "Full Name must contain only letters and spaces (3 to 30 characters).";
+        }
+
+        // Validate Username: letters and numbers only, 3 to 15 characters
+        if (!preg_match("/^[A-Za-z0-9]{3,15}$/", $username)) {
+            $errors[] = "Username must be 3 to 15 characters long (letters and numbers only).";
+        }
+
+        // Validate Email: must be a valid format AND a valid Gmail address
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match("/^[A-Za-z0-9._%+-]+@gmail\.com$/i", $email)) {
+            $errors[] = "Email must be a valid Gmail address (e.g., student@gmail.com).";
+        }
+
+        // Validate Password: at least 8 characters, at least 1 uppercase, 1 lowercase, 1 number
+        if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/", $password)) {
+            $errors[] = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number.";
+        }
+
+        // Validate Confirm Password: must match password
+        if ($password !== $confirm_password) {
+            $errors[] = "Passwords do not match.";
+        }
+    }
+
+    // ==========================================================================
+    // Step 5: Duplicate Username and Email Check (Using MySQLi Prepared Statement)
+    // ==========================================================================
+    if (empty($errors)) {
+        // Query to search for existing username or email
+        $checkSql = "SELECT username, email FROM students WHERE username = ? OR email = ?";
+        $checkStmt = $conn->prepare($checkSql);
+
+        if ($checkStmt) {
+            $checkStmt->bind_param("ss", $username, $email);
+            $checkStmt->execute();
+            $checkResult = $checkStmt->get_result();
+
+            $usernameExists = false;
+            $emailExists    = false;
+
+            // Check if returned records match username, email, or both
+            while ($row = $checkResult->fetch_assoc()) {
+                if (strcasecmp($row['username'], $username) === 0) {
+                    $usernameExists = true;
+                }
+                if (strcasecmp($row['email'], $email) === 0) {
+                    $emailExists = true;
+                }
+            }
+
+            $checkStmt->close();
+
+            // Set simple, beginner-friendly duplicate error messages
+            if ($usernameExists && $emailExists) {
+                $errors[] = "Username and email already exist.";
+            } elseif ($usernameExists) {
+                $errors[] = "Username already exists.";
+            } elseif ($emailExists) {
+                $errors[] = "Email already exists.";
+            }
+        } else {
+            $errors[] = "Database error: unable to check existing accounts.";
+        }
+    }
+
+    // ==========================================================================
+    // Step 6: Password Hashing & Insertion (Using MySQLi Prepared Statement)
+    // ==========================================================================
+    if (empty($errors)) {
+        // Securely hash the password (never store plain-text passwords!)
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // SQL prepared statement for insertion
+        $insertSql = "INSERT INTO students (name, username, email, password) VALUES (?, ?, ?, ?)";
+        $insertStmt = $conn->prepare($insertSql);
+
+        if ($insertStmt) {
+            // Bind parameters: "ssss" means 4 strings
+            $insertStmt->bind_param("ssss", $name, $username, $email, $hashedPassword);
+
+            if ($insertStmt->execute()) {
+                $isSuccess = true;
+            } else {
+                $errors[] = "Database error: registration failed. Please try again.";
+            }
+
+            $insertStmt->close();
+        } else {
+            $errors[] = "Database error: failed to prepare statement.";
+        }
+    }
+
+} else {
+    // If user opens this file directly without submitting the POST form, redirect back
+    header("Location: register.html");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Status - Student Hub</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/register.css">
+</head>
+
+<body>
+
+    <!-- Header Frame -->
+    <iframe src="header.html"
+            class="header-frame"
+            title="Student Hub Header"></iframe>
+
+    <!-- Top Action Bar -->
+    <div class="top-action-bar">
+        <a href="../index.html" class="home-nav-btn">
+            🏠 Home
+        </a>
+
+        <button id="theme-toggle"
+                class="theme-btn-compact"
+                type="button"
+                aria-label="Switch to dark theme">
+            🌙 Dark Mode
+        </button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="main-nav" aria-label="Main navigation">
+        <button id="menu-toggle"
+                class="mobile-menu-btn"
+                type="button"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            ☰ Menu
+        </button>
+
+        <div id="nav-links">
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="register.html">REGISTER</a>
+            <a href="login.html">LOGIN</a>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h1 class="page-title">REGISTRATION STATUS</h1>
+
+    <!-- Result Box -->
+    <main class="register-main">
+
+        <div class="result-card">
+
+            <?php if ($isSuccess): ?>
+
+                <!-- Registration Successful State -->
+                <div class="result-title success">
+                    🎉 Registration Successful!
+                </div>
+
+                <div class="msg-box-success">
+                    Registration successful!<br>
+                    You can now login.
+                </div>
+
+                <p style="color: #64748b; margin-bottom: 25px; font-size: 15px;">
+                    Welcome to StudentHub, <strong><?php echo htmlspecialchars($name); ?></strong>! Your account has been securely created.
+                </p>
+
+                <div class="btn-container">
+                    <a href="login.html" class="btn-primary">Go to Login</a>
+                    <a href="../index.html" class="btn-secondary">Back to Home</a>
+                </div>
+
+            <?php else: ?>
+
+                <!-- Registration Error State -->
+                <div class="result-title error">
+                    ⚠️ Registration Failed
+                </div>
+
+                <div class="msg-box-error">
+                    <strong>Please resolve the following:</strong>
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                            <li><?php echo htmlspecialchars($error); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <div class="btn-container">
+                    <a href="register.html" class="btn-primary">Try Again</a>
+                    <a href="javascript:history.back()" class="btn-secondary">← Go Back</a>
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+    </main>
+
+    <!-- Portal Footer -->
+    <footer>
+        &copy; 2026 STUDENT HUB &bull;
+        CHARUSAT University &bull;
+        All Rights Reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js" defer></script>
+
+</body>
+
+</html>
