@@ -1,3 +1,43 @@
+<?php
+// ==============================================================================
+// StudentHub - Student Portal Login Page (pages/login.php)
+// Handles login form display, error alerts, and session redirection
+// ==============================================================================
+
+session_start();
+
+// If user is already logged in, redirect directly to their dashboard
+if (isset($_SESSION['user_id'])) {
+    if (($_SESSION['role'] ?? 'student') === 'admin') {
+        header("Location: admin_dashboard.php");
+        exit();
+    } else {
+        header("Location: dashboard.php");
+        exit();
+    }
+}
+
+// Check for feedback messages via GET parameters
+$alertMessage = "";
+$alertClass   = "";
+
+if (isset($_GET['timeout'])) {
+    $alertMessage = "Your session has expired. Please login again.";
+    $alertClass   = "login-alert-warning";
+} elseif (isset($_GET['logged_out'])) {
+    $alertMessage = "You have been logged out successfully.";
+    $alertClass   = "login-alert-success";
+} elseif (isset($_GET['error'])) {
+    if ($_GET['error'] === 'empty') {
+        $alertMessage = "Please enter username/email and password.";
+        $alertClass   = "login-alert-error";
+    } else {
+        // Generic error message for security
+        $alertMessage = "Invalid username/email or password.";
+        $alertClass   = "login-alert-error";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +57,12 @@
     <main class="login-container">
 
         <h2>LOGIN</h2>
+
+        <?php if (!empty($alertMessage)): ?>
+            <div class="login-alert <?php echo $alertClass; ?>">
+                <?php echo htmlspecialchars($alertMessage); ?>
+            </div>
+        <?php endif; ?>
 
         <form action="login_process.php" method="POST">
 
