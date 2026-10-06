@@ -1,0 +1,245 @@
+/* ==============================================================================
+   StudentHub - Student Registration Styles (CSS/register.css)
+   Simple, clean styling for input fields, validation errors, and result messages
+   ============================================================================== */
+
+/* Align label to top of row so input + error display neatly */
+.register-row {
+    display: flex;
+    align-items: flex-start !important;
+    margin-bottom: 18px !important;
+}
+
+.register-row label {
+    padding-top: 10px; /* Aligns with input text baseline */
+}
+
+/* Container for input and its validation error message */
+.field-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.field-container input {
+    width: 100%;
+    padding: 11px 12px;
+    font-size: 15px;
+    border: 1px solid #b8c7d6;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #263746;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.field-container input:focus {
+    outline: none;
+    border-color: #315b7d;
+    box-shadow: 0 0 0 3px rgba(49, 91, 125, 0.18);
+}
+
+/* Red error state for input border */
+.field-container input.input-error {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2 !important;
+}
+
+/* Green state when field is valid */
+.field-container input.input-success {
+    border-color: #16a34a !important;
+}
+
+/* Simple red error message displayed beside/below the field */
+.error-msg {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 5px;
+    min-height: 18px;
+    line-height: 1.3;
+    font-weight: 500;
+    display: block;
+}
+
+/* Helper hint text (e.g. for password requirements) */
+.field-hint {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+/* ==============================================================================
+   Registration Result Card (Success / Error Page)
+   ============================================================================== */
+
+.result-card {
+    max-width: 540px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.result-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.result-title.success {
+    color: #15803d;
+}
+
+.result-title.error {
+    color: #b91c1c;
+}
+
+.msg-box-success {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.msg-box-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    padding: 16px 20px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.msg-box-error strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.msg-box-error ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.msg-box-error li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #315b7d;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 26px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #1f3d56;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #64748b;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 26px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #475569;
+    transform: translateY(-1px);
+}
+
+/* ==============================================================================
+   Dark Mode Support for Registration Form and Result Box
+   ============================================================================== */
+
+body.dark .field-container input {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f1f5f9;
+}
+
+body.dark .field-container input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+}
+
+body.dark .field-container input.input-error {
+    border-color: #f87171 !important;
+    background-color: #450a0a !important;
+    color: #fecaca !important;
+}
+
+body.dark .error-msg {
+    color: #f87171;
+}
+
+body.dark .field-hint {
+    color: #94a3b8;
+}
+
+body.dark .result-card {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+body.dark .msg-box-success {
+    background-color: #064e3b;
+    color: #a7f3d0;
+    border-color: #047857;
+}
+
+body.dark .msg-box-error {
+    background-color: #450a0a;
+    color: #fecaca;
+    border-color: #991b1b;
+}
+
+/* ==============================================================================
+   Mobile Responsiveness
+   ============================================================================== */
+
+@media (max-width: 768px) {
+    .register-row {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .register-row label {
+        padding-top: 0;
+        margin-bottom: 6px;
+    }
+}

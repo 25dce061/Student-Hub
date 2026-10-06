@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table - Student Hub</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/timetable.css">
+    <script src="../js/theme.js"></script>
+</head>
+<body>
+
+    <!-- Header Frame -->
+    <iframe src="header.html" class="header-frame" title="Student Hub Header"></iframe>
+
+    <!-- Top Action Bar (Aligned identically on all pages) -->
+    <div class="top-action-bar">
+        <a href="../index.html" class="home-nav-btn">🏠 Home</a>
+        <button id="theme-toggle" class="theme-btn-compact" type="button" aria-label="Switch to dark theme">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Navigation Bar (Aligned identically on all pages, bold font) -->
+    <nav id="main-nav" aria-label="Main navigation">
+        <button id="menu-toggle" class="mobile-menu-btn" type="button" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+        <div id="nav-links">
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="fees.html">FEES</a>
+            <a href="timetable.html" class="active">TIME TABLE</a>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h1 class="page-title">WEEKLY ACADEMIC TIME TABLE</h1>
+
+    <!-- Enlarged, Visible & Adjustable Table (No zooming required) -->
+    <main class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 22%;">TIME SLOT</th>
+                    <th style="width: 24%;">FACULTY IN-CHARGE</th>
+                    <th style="width: 26%;">COURSE CODE &amp; TITLE</th>
+                    <th style="width: 28%;">ATTENDANCE / SESSION STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>09:10 - 10:10 AM</strong></td>
+                    <td>Prof. Radhika Patel</td>
+                    <td>ITUE203 &bull; Web Frameworks</td>
+                    <td><span class="status-present">P (Present &bull; Completed)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>10:10 - 11:10 AM</strong></td>
+                    <td>Prof. Nishant Joshi</td>
+                    <td>ITUC201 &bull; Computer Networks</td>
+                    <td><span class="status-pending">- (Upcoming Lecture)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>11:10 - 12:10 PM</strong></td>
+                    <td>Faculty Team</td>
+                    <td>Recess &bull; Lunch Break</td>
+                    <td><span class="badge-info">Campus Recess</span></td>
+                </tr>
+                <tr>
+                    <td><strong>12:10 - 01:10 PM</strong></td>
+                    <td>Prof. Ritesh Dave</td>
+                    <td>CEUC201 &bull; OOP Systems</td>
+                    <td><span class="status-present">P (Present &bull; Completed)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>02:10 - 04:20 PM</strong></td>
+                    <td>Prof. Urvashi Shah</td>
+                    <td>CEUE201 &bull; Data Structures Lab</td>
+                    <td><span class="status-pending">- (Lab Practical Session)</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Portal Footer -->
+    <footer>
+        &copy; 2026 STUDENT HUB &bull; CHARUSAT University &bull; All Rights Reserved.
+    </footer>
+
+</body>
+</html>

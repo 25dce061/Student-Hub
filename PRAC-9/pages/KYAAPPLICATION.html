@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KYA Application - Student Hub</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../js/theme.js"></script>
+</head>
+
+<body>
+
+    <iframe src="header.html"
+            class="header-frame"
+            title="Student Hub Header"></iframe>
+
+    <div class="top-action-bar">
+
+        <a href="../index.html" class="home-nav-btn">
+            🏠 Home
+        </a>
+
+        <button id="theme-toggle"
+                class="theme-btn-compact"
+                type="button">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+    <nav id="main-nav" aria-label="Main navigation">
+
+        <button id="menu-toggle"
+                class="mobile-menu-btn"
+                type="button">
+            ☰ Menu
+        </button>
+
+        <div id="nav-links">
+
+            <a href="dashboard.html">DASHBOARD</a>
+            <a href="course.html">COURSES</a>
+            <a href="event.html">EVENTS</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="KYAAPPLICATION.html" class="active">KYA APPLICATION</a>
+            <a href="setting.html">SETTING</a>
+
+        </div>
+
+    </nav>
+
+    <h1 class="page-title">
+        KYA (KNOW YOUR APPLICANT) APPLICATION FORM
+    </h1>
+
+    <main class="kya-main">
+
+        <div class="kya-box">
+
+            <form onsubmit="event.preventDefault(); alert('KYA Application Form submitted successfully!'); window.location.href='dashboard.html';">
+
+                <div class="kya-field">
+
+                    <label for="name">
+                        Applicant Full Name:
+                    </label>
+
+                    <input type="text"
+                           id="name"
+                           placeholder="Enter Student Name"
+                           value="Yesha Patel"
+                           required>
+
+                </div>
+
+
+                <div class="kya-field">
+
+                    <label for="id">
+                        Student Enrollment ID:
+                    </label>
+
+                    <input type="text"
+                           id="id"
+                           placeholder="Enter University ID"
+                           value="22CE045"
+                           required>
+
+                </div>
+
+
+                <div class="kya-field">
+
+                    <label for="department">
+                        Department &amp; Specialization:
+                    </label>
+
+                    <input type="text"
+                           id="department"
+                           placeholder="e.g. Computer Engineering"
+                           value="Computer Engineering"
+                           required>
+
+                </div>
+
+
+                <div class="kya-buttons">
+
+                    <button type="submit" class="kya-submit">
+                        Submit Application
+                    </button>
+
+                    <a href="dashboard.html" class="kya-dashboard">
+                        ← Return to Dashboard
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2026 STUDENT HUB &bull;
+        CHARUSAT University &bull;
+        All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Courses & Academics",
+    "question": "How do I register for courses?",
+    "answer": "Open the Courses page, review the available course codes, and follow the registration instructions shared by your academic department during the enrollment window."
+  },
+  {
+    "id": 2,
+    "category": "Events & Activities",
+    "question": "Where can I find campus event details?",
+    "answer": "Use the Events link in the main navigation to see all upcoming university technical fests, cultural nights, workshops, and sports meets with full registration links."
+  },
+  {
+    "id": 3,
+    "category": "Student Profile",
+    "question": "How do I update my student profile?",
+    "answer": "Visit the Profile page from your student dashboard. You can review your details and contact the helpdesk if any official college record requires updating."
+  },
+  {
+    "id": 4,
+    "category": "Fees & Attendance",
+    "question": "Who can help with fee or attendance questions?",
+    "answer": "Contact your department coordinator or use the Fees and Attendance pages in the Student Hub dashboard for your real-time academic records."
+  },
+  {
+    "id": 5,
+    "category": "Campus Life",
+    "question": "What are the Central Library working hours?",
+    "answer": "The Central Library is open Monday to Saturday from 8:00 AM to 8:00 PM, and extended until 9:00 PM during mid-semester and end-semester examination weeks."
+  },
+  {
+    "id": 6,
+    "category": "Technical Support",
+    "question": "How do I reset my portal password?",
+    "answer": "Go to Dashboard > Settings > Change Password, or reach out to the Student Helpdesk at studenthub@gmail.com with your student ID."
+  }
+]
